@@ -49,7 +49,7 @@ const Hero = () =>  {
         {error && (
           <div>
             <p>Cannot retrieve Contact Details</p>
-            <p>{error?.message}</p>
+            <p>Reason: {error?.message}</p>
           </div>
         )}
         </section>
