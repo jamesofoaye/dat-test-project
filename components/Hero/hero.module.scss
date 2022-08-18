@@ -1,0 +1,95 @@
+@use '/styles/variables' as variable;
+
+.container {
+    background-color: variable.$fudoCream;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+
+    h1 {
+        font-family: 'Martel';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 73px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        color: variable.$fudoGray;
+    }
+
+    button {
+        background-color: variable.$fudoYellow;
+        color: variable.$fudoBlack;
+        font-size: 1.2rem;
+        padding: 20px 32px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+}
+
+.food {
+    padding-left: 20px;
+    background-color: variable.$fudoCream;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 20px;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    padding-left: 150px;
+    padding-right: 150px;
+
+    .feature1 {
+        background-color: white;
+        text-align: center;
+        align-items: center;
+        border-radius: 20px;
+        height: 206.16px;
+    }
+
+    .feature2 {
+        background-color: variable.$fudoYellow;
+        text-align: center;
+        border-radius: 20px;
+        height: 206.16px;
+        
+    }
+
+    .featureIcon {
+        padding-top: 15px;
+    }
+
+    .featureHeading {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 31px;
+        color: #555555;     
+    }
+
+    .featureText {
+        font-family: 'Martel';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+        color: variable.$fudoGray;
+    }
+}
