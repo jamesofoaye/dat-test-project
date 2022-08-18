@@ -46,8 +46,14 @@ const Hero = () =>  {
             );
           })}
 
-          {error && <p>Cannot retrieve Contact Details</p>}
         </section>
+
+        {error && (
+          <div>
+            <p>Cannot retrieve Contact Details</p>
+            <p>{error?.message}</p>
+          </div>
+        )}
     </header>
   );
 }
