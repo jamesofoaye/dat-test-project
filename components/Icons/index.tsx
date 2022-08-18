@@ -1,0 +1,13 @@
+export { Burger } from './burger';
+export { Cart } from './cart'
+export { FrenchFries } from './french-fries'
+export { Location } from './location'
+export { Logo } from './logo'
+export { Minus } from './minus'
+export { Next } from './next'
+export { Phone } from './phone'
+export { Pizza } from './pizza'
+export { Plus } from './plus'
+export { Previous } from './previous'
+export { Schedule } from './schedule'
+export { SoftDrink } from './soft-drink'
