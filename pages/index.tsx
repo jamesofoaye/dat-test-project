@@ -1,8 +1,10 @@
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Hero from "../components/Hero";
-import PaymentSection from "../components/Payment";
-import Footer from "../components/Footer";
+
+const PaymentSection = dynamic(() => import("../components/Payment"));
+const Footer = dynamic(() => import("../components/Footer"));
 
 const Home: NextPage = () => {
 	return (
@@ -13,10 +15,13 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
+			{/** Hero Section Component */}
 			<Hero />
 
+			{/** Payment Section Component */}
 			<PaymentSection />
 
+			{/** Footer Section Component */}
 			<Footer />
 		</div>
 	);
