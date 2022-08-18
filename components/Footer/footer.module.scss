@@ -1,0 +1,14 @@
+@use '/styles/variables' as variable;
+
+.container {
+    background-color: variable.$fudoCream;
+    color: variable.$fudoGray;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 18px;
+}
