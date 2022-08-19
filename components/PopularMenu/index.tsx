@@ -21,7 +21,7 @@ const PopularMenu = () => {
 	// console.log("drinks", drinks);
 
 	return (
-		<section className={styles.container}>
+		<section className={styles.container} id={"menu"}>
 			<h1 className={styles.title}>Our Popular Menu</h1>
 			<p className={styles.description}>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet
@@ -122,10 +122,18 @@ const PopularMenu = () => {
 				</span>
 			</div>
 
-			{/** Display Message Incase there is an error */}
+			{/** Display error Message Incase there is an error when fetching category information */}
 			{error && (
 				<div>
 					<p className={styles.center}>Cannot retrieve Category Details</p>
+					<p className={styles.center}>Reason: {error?.message}</p>
+				</div>
+			)}
+
+			{/** Display error Message Incase there is an error when fetching pizza information */}
+			{errorPizza && (
+				<div>
+					<p className={styles.center}>Cannot retrieve Pizza Details</p>
 					<p className={styles.center}>Reason: {error?.message}</p>
 				</div>
 			)}
