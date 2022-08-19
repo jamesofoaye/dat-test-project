@@ -3,8 +3,11 @@ import Image from "next/image";
 import { useFetchData } from "../../Hooks/useFetchData";
 import { Cart, Next, Previous } from "../Icons";
 import { Bars } from "react-loader-spinner";
+import { useCart } from "react-use-cart";
 
 const PopularMenu = () => {
+	const { addItem } = useCart();
+
 	const { data, error } = useFetchData("category");
 	const { data: pizza, error: errorPizza } = useFetchData("category/pizza");
 	// const { data: fries, error: errorFries } = useFetchData("category/fries");
@@ -97,7 +100,10 @@ const PopularMenu = () => {
 												</span>
 											</div>
 
-											<button className={styles.foodItemPriceButton}>
+											<button
+												className={styles.foodItemPriceButton}
+												onClick={() => addItem(food)}
+											>
 												Add to Cart
 												<span className={styles.foodItemPriceButtonIcon}>
 													<Cart />
