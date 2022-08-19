@@ -55,66 +55,69 @@ const Navbar = () => {
 				<div className={styles.cartMenu}>
 					<h1 className={styles.cartMenuTitle}>Cart</h1>
 
-					{items.map((item: any, index: number) => (
-						<div key={index}>
-							<div className={styles.cartMenuItem}>
-								<div className={styles.cartMenuItemImg}>
-									<Image
-										src={item.image}
-										alt={item.title}
-										width={110}
-										height={85}
-									/>
-								</div>
+					{isEmpty ? (
+						<p>No items are added</p>
+					) : (
+						<>
+							{items.map((item: any, index: number) => (
+								<div key={index}>
+									<div className={styles.cartMenuItem}>
+										<Image
+											src={item.image}
+											alt={item.title}
+											width={130}
+											height={80}
+											className={styles.cartMenuItemImg}
+										/>
 
-								<div className={styles.cartMenuItemInfo}>
-									<p className={styles.cartMenuItemName}>{item.title}</p>
+										<div className={styles.cartMenuItemInfo}>
+											<p className={styles.cartMenuItemName}>{item.title}</p>
 
-									<div className={styles.cartMenuItemActions}>
-										<button
-											className={styles.cartMenuItemButton}
-											onClick={() =>
-												updateItemQuantity(item.id, item.quantity - 1)
-											}
-										>
-											<Minus />
-										</button>
+											<div className={styles.cartMenuItemActions}>
+												<button
+													className={styles.cartMenuItemButton}
+													onClick={() =>
+														updateItemQuantity(item.id, item.quantity - 1)
+													}
+												>
+													-
+												</button>
 
-										<p className={styles.cartMenuItemQuantity}>
-											{item.quantity}
-										</p>
+												<p className={styles.cartMenuItemQuantity}>
+													{item.quantity}
+												</p>
 
-										<button
-											className={styles.cartMenuItemButton}
-											onClick={() =>
-												updateItemQuantity(item.id, item.quantity + 1)
-											}
-										>
-											<Plus />
-										</button>
+												<button
+													className={styles.cartMenuItemButton}
+													onClick={() =>
+														updateItemQuantity(item.id, item.quantity + 1)
+													}
+												>
+													+
+												</button>
 
-										<p className={styles.cartMenuItemPrice}>
-											{item.currency} {item.price}
-										</p>
+												<p className={styles.cartMenuItemPrice}>
+													{item.currency} {item.price.toFixed(2)}
+												</p>
+											</div>
+										</div>
 									</div>
+
+									<button
+										className={styles.cartMenuItemRemove}
+										onClick={() => removeItem(item.id)}
+									>
+										Remove
+									</button>
 								</div>
-							</div>
+							))}
 
-							<button
-								className={styles.cartMenuItemRemove}
-								onClick={() => removeItem(item.id)}
-							>
-								Remove
+							<button className={styles.cartMenuItemCheckout}>
+								<span>Check out</span>
+								<span>$ {cartTotal.toFixed(2)}</span>
 							</button>
-						</div>
-					))}
-
-					<button className={styles.cartMenuItemCheckout}>
-						Check Out
-						<span className={styles.cartMenuItemCheckoutTotal}>
-							{cartTotal}
-						</span>
-					</button>
+						</>
+					)}
 				</div>
 			)}
 		</nav>
