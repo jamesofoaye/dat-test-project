@@ -4,8 +4,8 @@ import Head from "next/head";
 import Hero from "../components/Hero";
 
 const PaymentSection = dynamic(() => import("../components/Payment"));
-const Footer = dynamic(() => import("../components/Footer"));
 const PopularMenu = dynamic(() => import("../components/PopularMenu"));
+const Footer = dynamic(() => import("../components/Footer"));
 
 const Home: NextPage = () => {
 	return (
