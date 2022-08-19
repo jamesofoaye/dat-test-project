@@ -47,7 +47,7 @@ const PaymentSection = () => {
 	};
 
 	return (
-		<section className={styles.container}>
+		<section className={styles.container} id={"form"}>
 			<div>
 				<h1 className={styles.title}>Receive payments quickly from anywhere</h1>
 				<p className={styles.subtitle}>
