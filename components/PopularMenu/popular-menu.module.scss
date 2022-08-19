@@ -1,0 +1,173 @@
+@use '/styles/variables' as variable;
+
+.container {
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 20px;
+
+    .title {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 73px;
+        color: variable.$fudoBlack;
+    }
+
+    .description {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        color: #666666;
+    }
+
+    .center {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .menuTabs {
+        display: flex;
+        margin-bottom: 30px;
+
+        .menuItem {
+           display: flex;
+           align-items: center;
+
+            & > input[type="radio"] {
+                display: none;
+            }
+
+            & > label {
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+                user-select: none;
+                border-bottom: 1px solid variable.$fudoGray;
+                padding: 2px 8px;
+                font-size: 16px;
+                line-height: 1.5;
+                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+                cursor: pointer;
+                position: relative;
+                top: 1px;
+            }
+            
+            & > label:not(:first-of-type) {
+                border-left: none;
+            }
+
+            & > input[type="radio"]:checked+label {
+                padding-top: 5px;
+                background-color: #fff;
+                border-bottom: 0px;
+                border-top: 1px solid variable.$fudoGray;
+                border-left: 1px solid variable.$fudoGray;
+                border-right: 1px solid variable.$fudoGray;
+                border-radius: 4px 4px 0px 0px;
+            }
+
+           .menuItemText {
+                padding-left: 10px;
+                font-family: 'Martel';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 22px;
+                line-height: 33px;
+                display: flex;
+                align-items: center;
+                color: variable.$fudoBlack;
+
+                .menuItemName{
+                    padding-left: 10px;
+                }
+           }
+        }
+    }
+
+    .foodContainer {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        margin-top: 30px;
+
+        .foodNavButton {
+           margin: auto auto;
+        }
+
+        .foodGrid {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 30px;
+            
+            .foodItem {
+                background-color: variable.$fudoCream;
+                margin-left: 10px;
+                margin-right: 10px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+
+                .foodItemImg {
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    object-fit: cover;
+                }
+
+                .foodItemInfo{
+                    padding: 0px 10px 20px 20px;
+
+                    .foodItemName{
+                        font-family: 'Martel';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 22px;
+                        color: variable.$fudoGray;
+                    }
+
+                    .foodItemPrice{
+                        font-family: 'DM Sans';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 22px;
+                        line-height: 29px;
+
+                        .foodItemPriceCurrency{
+                            color: variable.$fudoYellow;
+                            padding-right: 5px;
+                        }
+
+                        .foodItemPriceText{
+                            color: variable.$fudoGray;
+                        }
+
+                    }
+
+                    .foodItemPriceButton {
+                        background-color: variable.$fudoCream;
+                        color: variable.$fudoGray;
+                        border: none;
+                        cursor: pointer;
+                        font-family: 'Martel';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 22px;
+                        line-height: 40px;
+                        display: flex;
+
+                        .foodItemPriceButtonIcon{
+                            justify-content: center;
+                            display: flex;
+                            margin-top: 6px;
+                            margin-left: 15px
+                        }
+                    }
+                }
+             }
+        }
+
+    }
+    
+}
