@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 
 const PaymentSection = dynamic(() => import("../components/Payment"));
 const Footer = dynamic(() => import("../components/Footer"));
+const PopularMenu = dynamic(() => import("../components/PopularMenu"));
 
 const Home: NextPage = () => {
 	return (
@@ -20,6 +21,9 @@ const Home: NextPage = () => {
 
 			{/** Payment Section Component */}
 			<PaymentSection />
+
+			{/** Popular Menu Section Component */}
+			<PopularMenu />
 
 			{/** Footer Section Component */}
 			<Footer />
