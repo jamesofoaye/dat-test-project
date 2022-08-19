@@ -78,18 +78,52 @@
         top: -10px;
         right: -10px;
         margin: 75px 150px;
-        display: flex;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         background: #fff;
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        padding: 10px;
         width: 25%;
         overflow-y: scroll;
         overflow-x: hidden;
         z-index: 1;
+
+        .cartMenuItemRemove {
+            font-family: 'Martel';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            background-color: white;
+            border: none;
+            letter-spacing: 0.396px;
+            text-decoration-line: underline;
+            color: #D80027;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        
+        .cartMenuItemCheckout {
+            display: flex;
+            width: 100%;
+            background-color: variable.$fudoYellow;
+            padding: 10px 32px;
+            border-radius: 43px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+
+            font-family: 'Martel';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 26px;
+                justify-content: space-between;
+                align-items: center;
+                letter-spacing: -0.494px;
+        }
 
         .cartMenuTitle {
             color: variable.$fudoBlack;
@@ -99,19 +133,61 @@
             font-size: 36px;
             line-height: 41px;
             letter-spacing: 0.396px;
+            text-align: left;
         }
 
         .cartMenuItem {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 10px;
 
-            .cartMenuItemActions{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+            .cartMenuItemImg{
+                border-radius: 10px;
             }
+
+            .cartMenuItemInfo{
+                .cartMenuItemName{
+                    font-family: 'Martel';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 16px;
+                    letter-spacing: -0.408px;
+                    color: variable.$fudoBlack;
+                }
+
+                .cartMenuItemActions{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .cartMenuItemButton{
+                        background-color: variable.$fudoCream;
+                        padding: 5px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50px;
+                        border: none;
+                        cursor: pointer;
+                        font-family: 'Martel';
+                        font-size: 27px;
+                        line-height: 25px;
+                        text-align: center;
+                        color: variable.$fudoBlack;
+                    }
+
+                    .cartMenuItemQuantity{
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+
+                    .cartMenuItemPrice{
+                        padding-left: 20px;
+                        color: variable.$fudoGray;
+                    }
+                }
+            }
+
         }
     }
 }
