@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "../Navbar";
 import styles from "./hero.module.scss";
 import { useFetchData } from "../../Hooks/useFetchData";
@@ -20,7 +21,9 @@ const Hero = () => {
 						posuere quis consequat.
 					</p>
 
-					<button>Get Started</button>
+					<Link href={"/#form"} passHref>
+						<button>Get Started</button>
+					</Link>
 				</div>
 
 				<div className={styles.food}>
@@ -30,7 +33,10 @@ const Hero = () => {
 
 			<section className={!data ? styles.center : styles.features}>
 				{!data ? (
-					<Bars color="#FDC913" height={80} width={80} />
+					<>
+						{/** Show loading indicator when there's no data */}
+						<Bars color="#FDC913" height={80} width={80} />
+					</>
 				) : (
 					data.data.map((contact: any, index: number) => {
 						return (
@@ -60,6 +66,7 @@ const Hero = () => {
 				)}
 			</section>
 
+			{/** Show error message when there's an error */}
 			{error && (
 				<div>
 					<p className={styles.center}>Cannot retrieve Contact Details</p>
