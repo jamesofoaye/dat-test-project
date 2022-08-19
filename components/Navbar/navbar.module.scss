@@ -7,69 +7,111 @@
     padding-left: 150px;
     padding-right: 150px;
     font-family: 'Martel';
-}
-
-.links{
-    display: flex;
     
-    a {
+    .links{
+        display: flex;
+        
+        a {
+            color: variable.$fudoGray;
+            text-decoration: none;
+        }
+    
+        & > * {
+            margin-right: 2.5rem;
+            list-style: none;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        
+        /** add border bottom to 1st list */
+        & > *:first-child {
+            border-bottom: 1px solid variable.$fudoYellow;
+        }
+    }
+    
+    .cartSection{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: variable.$fudoGray;
-        text-decoration: none;
-    }
-
-    & > * {
-        margin-right: 2.5rem;
-        list-style: none;
-        text-decoration: none;
         font-size: 1.2rem;
+        &:hover {
+            text-decoration: none;
+        }
     }
     
-    /** add border bottom to 1st list */
-    & > *:first-child {
-        border-bottom: 1px solid variable.$fudoYellow;
+    .cartTotal {
+        display: flex;
+        margin-left: -10px;
+        margin-top: -2px;
+        width: 18px;
+        height: 18px;
+        position: relative;
+        background: #D80027;
+        border-radius: 100%;
+        font-size: 12px;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
-}
-
-.cartSection{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: variable.$fudoGray;
-    font-size: 1.2rem;
-    &:hover {
-        text-decoration: none;
+    
+    .button {
+        background-color: variable.$fudoYellow;
+        padding: 10px 32px;
+        border-radius: 20px;
+        border: none;
+        margin-left: 20px;
+        cursor: pointer;
+        font-family: 'Martel';
     }
-}
 
-.cartTotal {
-    /** put the total in the cart in the corner of the cart icons*/
-    display: flex;
-    margin-left: -10px;
-    margin-top: -2px;
-    width: 18px;
-    height: 18px;
-    position: relative;
-    background: #D80027;
-    border-radius: 100%;
-    font-size: 12px;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
+    .cartMenu{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        margin: 75px 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 25%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        z-index: 1;
 
-.button {
-    background-color: variable.$fudoYellow;
-    padding: 10px 32px;
-    border-radius: 20px;
-    border: none;
-    margin-left: 20px;
-    cursor: pointer;
-    font-family: 'Martel';
+        .cartMenuTitle {
+            color: variable.$fudoBlack;
+            font-family: 'Martel';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 41px;
+            letter-spacing: 0.396px;
+        }
+
+        .cartMenuItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .cartMenuItemActions{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
 }
