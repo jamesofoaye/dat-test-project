@@ -4,6 +4,7 @@ import { useFetchData } from "../../Hooks/useFetchData";
 import { Cart, Next, Previous } from "../Icons";
 import { Bars } from "react-loader-spinner";
 import { useCart } from "react-use-cart";
+import toast, { Toaster } from "react-hot-toast";
 
 const PopularMenu = () => {
 	const { addItem } = useCart();
@@ -22,6 +23,9 @@ const PopularMenu = () => {
 
 	return (
 		<section className={styles.container} id={"menu"}>
+			{/** Toast Notification */}
+			<Toaster />
+
 			<h1 className={styles.title}>Our Popular Menu</h1>
 			<p className={styles.description}>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet
@@ -102,7 +106,10 @@ const PopularMenu = () => {
 
 											<button
 												className={styles.foodItemPriceButton}
-												onClick={() => addItem(food)}
+												onClick={() => {
+													addItem(food);
+													toast.success(`${food.title} added to cart`);
+												}}
 											>
 												Add to Cart
 												<span className={styles.foodItemPriceButtonIcon}>
