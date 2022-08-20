@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Bars } from "react-loader-spinner";
+import toast, { Toaster } from "react-hot-toast";
 
 type UserSubmitForm = {
 	name: string;
@@ -43,11 +44,15 @@ const PaymentSection = () => {
 
 		const response = await request.json();
 
-		console.log(response);
+		// show toast message when response is returned
+		response && toast.success(response.message);
 	};
 
 	return (
 		<section className={styles.container} id={"form"}>
+			{/** Toast Notification */}
+			<Toaster />
+
 			<div>
 				<h1 className={styles.title}>Receive payments quickly from anywhere</h1>
 				<p className={styles.subtitle}>
