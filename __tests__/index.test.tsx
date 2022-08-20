@@ -1,9 +1,8 @@
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import PaymentSection from "../components/Payment";
-import "@testing-library/jest-dom";
-import user from "@testing-library/user-event";
 
 describe("Navbar", () => {
 	it("should render the navbar", () => {
