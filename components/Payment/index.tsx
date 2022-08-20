@@ -28,6 +28,7 @@ const PaymentSection = () => {
 		register,
 		handleSubmit,
 		formState: { isSubmitting, errors },
+		reset,
 	} = useForm<UserSubmitForm>({
 		resolver: yupResolver(validationSchema),
 	});
@@ -44,8 +45,8 @@ const PaymentSection = () => {
 
 		const response = await request.json();
 
-		// show toast message when response is returned
-		response && toast.success(response.message);
+		// show toast message when response is returned and reset the form
+		response && (toast.success(response.message), reset());
 	};
 
 	return (
